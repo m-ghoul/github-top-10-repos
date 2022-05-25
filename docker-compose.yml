@@ -1,0 +1,22 @@
+version: '3'
+services:
+    web:
+        # Specify image to start the container from
+        image: python-flask-server
+        # Build from Dockerfile
+        build: .
+        # Expose ports
+        ports:
+            - "5000:5000"
+        # Define dependency (service will not start without it)
+        depends_on:
+            -   db
+        volumes:
+            - ./server:/python-flask-server
+    db:
+        image: postgres
+        ports:
+           - "5001:5432"
+        restart: always
+        env_file:
+            -   "./env/postgres.env"
