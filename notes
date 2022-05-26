@@ -1,11 +1,26 @@
 --- General commands ---
 
+Build your docker-compose document
+docker-compose up --build
+
+Run your docker-compose container
+docker-compose up
+
 Open a bash shell into a container
 docker-compose exec container_name bash
 
 --- Flask Commands ---
 
+Initialize DB
+flask db init
 
+Migrate to DB
+flask db migrate
+
+If migrate returns "Target database not up to date"
+flask db stamp head
+flask db migrate
+flask db upgrade
 
 --- DB Commands (most of them require to be in db container) ---
 

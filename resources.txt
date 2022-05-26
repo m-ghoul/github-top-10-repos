@@ -1,0 +1,17 @@
+Flask Tutorial in Visual Studio Code
+https://code.visualstudio.com/docs/python/tutorial-flask
+
+Python REST API Tutorial - Building a Flask REST API
+https://youtu.be/GMppyAPbLYk
+
+Flask app with PostgreSQL
+https://youtu.be/XZ_gAWdGzZk
+
+How to Set Up a PostgreSQL Database with Docker
+https://youtu.be/RdPYA-wDhTA
+
+Docker Tutorial For Beginners - How To Containerize Python Applications
+https://youtu.be/bi0cKgmRuiA
+
+How to use PostgreSQL with Docker & Python (also Web UI)
+https://youtu.be/nlk0QlPdbcY
