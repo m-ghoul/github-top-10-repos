@@ -1,22 +1,38 @@
+# TODO 1. Specifiy the version of the docker compose document
 version: '3'
+# TODO 2. Specifiy the services you want to run using docker-compose (for our case, it's web and db)
 services:
+# TODO 3. Define the web service 
     web:
         # Specify image to start the container from
         image: python-flask-server
-        # Build from Dockerfile
+        # Build from Dockerfile in current directory (project directory)
         build: .
-        # Expose ports
+        # Expose ports in the format (client_port:server_port)
         ports:
             - "5000:5000"
         # Define dependency (service will not start without it)
         depends_on:
             -   db
+        # Define a volume to store migrations
         volumes:
             - ./server:/python-flask-server
+# TODO 4. Define the db service
     db:
+        # Specify image to start the container from
         image: postgres
+        # Expose ports in the format (client_port:server_port)
         ports:
            - "5001:5432"
+        # Set a restart policy for the container
         restart: always
+        # Specify a volume to store a backup of the postgres data
+        volumes:
+            - ./postgres_data:/var/lib/postgresql/data
+        # Create an environment file called postgres.env, where you keep the postgres environment variables such as the username, password and database (see env/postgres.env)
         env_file:
             -   "./env/postgres.env"
+# TODO 5. Define the volumes that are share among multiple services
+volumes:
+    # The data from out postgres database is share between the web and db services
+    postgres_data:

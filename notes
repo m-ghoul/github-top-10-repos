@@ -1,0 +1,18 @@
+--- General commands ---
+
+Open a bash shell into a container
+docker-compose exec container_name bash
+
+--- Flask Commands ---
+
+
+
+--- DB Commands (most of them require to be in db container) ---
+
+Open a PostgreSQL terminal to a particular database
+psql db_name -U username
+
+To see the list of relations
+\dt
+
+NOTE: You can run any SQL command if you are in a terminal for a particular database
